@@ -177,8 +177,8 @@ export default function Navbar() {
 
         {/* Contact Icons */}
         <div className="hidden md:flex space-x-4 text-xl">
-          <a href="tel:+1234567890" className="hover:text-blue-600">📞</a>
-          <a href="mailto:info@example.com" className="hover:text-blue-600">✉️</a>
+          <a href="tel:+919924870978" className="hover:text-blue-600">📞</a>
+          <a href="mailto:squarefoundry@gmail.com" className="hover:text-blue-600">✉️</a>
           <a href="location.html" className="hover:text-blue-600">📍</a>
         </div>
       </div>
