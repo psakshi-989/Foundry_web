@@ -20,6 +20,8 @@ import brakedrum from "../assets/products/brake-drum.png";
 import impeller from "../assets/products/impeller.png";
 import sleeve from "../assets/products/sleeves.png";
 import pulley from "../assets/products/pulley.png";
+import valve from "../assets/products/valve.png";
+import volute from "../assets/products/volute-casing.png";
 const placeholder = "https://via.placeholder.com/150";
 
 // Product categories with their respective items
@@ -46,7 +48,7 @@ const categories = [
     products: [
       { name: "Motor Upper Housing", image: uh },
       { name: "Motor Lower Housing", image: lh },
-      { name: "Valve", image: ""},
+      { name: "Valve", image: valve},
       { name: "Open Well Bracket", image: owb },
       { name: "Open Well Motor Body", image: owmb },
       { name: "Motor Base", image: motorbase },
@@ -57,7 +59,7 @@ const categories = [
       { name: "End Shield Casting", image: ""},
       { name: "Column Pipe Adapter", image: cpa},
       { name: "Connection Piece", image: connection},
-      { name: "Volute Casting", image: ""}
+      { name: "Volute Casing", image: volute}
     ],
   },
   {

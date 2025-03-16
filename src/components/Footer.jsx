@@ -53,7 +53,7 @@ export default function Footer() {
               <p>
                 <span className="font-semibold">Address:</span> Survey No : 275/
                 P-27, Plot No - 4, Hadamtala Industrial Area, Rajkot, Gujarat
-                360001, India
+                360024, India
               </p>
               <p>
                 <span className="font-semibold">Phone:</span> +91 99248 70978
