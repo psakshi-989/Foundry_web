@@ -15,9 +15,9 @@ export default function Capability() {
             transition-transform transform hover:scale-105 hover:shadow-xl hover:border-red-500 hover:bg-white/20 duration-300"
         >
           <PackageSearch className="w-12 h-12 text-red-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-semibold text-red-600 mb-4">
+          <h3 className="text-2xl font-semibold text-red-600 mb-4">
             Raw Material & Material
-          </h2>
+          </h3>
           <p className="text-lg">
             We cast all standards of <b>ferrous and non-ferrous metals</b>.
             Using <b>solidification casting methods</b>, we ensure{" "}
@@ -30,9 +30,9 @@ export default function Capability() {
             transition-transform transform hover:scale-105 hover:shadow-xl hover:border-red-500 hover:bg-white/20 duration-300"
         >
           <Shapes className="w-12 h-12 text-red-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-semibold text-red-600 mb-4">
+          <h3 className="text-2xl font-semibold text-red-600 mb-4">
             Casting Range
-          </h2>
+          </h3>
           <p className="text-lg">
             Our products include{" "}
             <b>
@@ -50,9 +50,9 @@ export default function Capability() {
             transition-transform transform hover:scale-105 hover:shadow-xl hover:border-red-500 hover:bg-white/20 duration-300"
         >
           <ShieldCheck className="w-12 h-12 text-red-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-semibold text-red-600 mb-4">
+          <h3 className="text-2xl font-semibold text-red-600 mb-4">
             Our Values
-          </h2>
+          </h3>
           <ul className="text-lg space-y-2">
             <li>
               ✔ Achieved <b>ISO 9001:2015</b> certification.

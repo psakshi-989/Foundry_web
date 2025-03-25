@@ -1,10 +1,10 @@
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { MessageCircleMore, PhoneCall, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bottom-0 bg-zinc-800 text-gray-300 py-12 px-4 md:px-6 lg:px-8">
+    <footer className="bg-zinc-800 text-gray-300 py-12 px-4 md:px-6 lg:px-8">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Company Info */}
           <div className="space-y-4">
             <h2 className="text-xl font-bold text-white">SQUARE FOUNDRY</h2>
@@ -19,86 +19,63 @@ export default function Footer() {
           <div className="space-y-4">
             <h2 className="text-xl font-bold text-white">INDUSTRY SOLUTIONS</h2>
             <nav className="flex flex-col space-y-2">
-              <a
-                href="#"
-                className="text-sm hover:text-white transition-colors"
-              >
-                Automotive
-              </a>
-              <a
-                href="#"
-                className="text-sm hover:text-white transition-colors"
-              >
-                Construction
-              </a>
-              <a
-                href="#"
-                className="text-sm hover:text-white transition-colors"
-              >
-                Agriculture
-              </a>
-              <a
-                href="#"
-                className="text-sm hover:text-white transition-colors"
-              >
-                Water Management
-              </a>
+              {["Automotive", "Construction", "Agriculture", "Water Management"].map((item, index) => (
+                <a 
+                  key={index} 
+                  href="#" 
+                  className="text-sm hover:text-white transition-colors"
+                >
+                  {item}
+                </a>
+              ))}
             </nav>
           </div>
 
           {/* About/Contact */}
           <div className="space-y-4">
             <h2 className="text-xl font-bold text-white">ABOUT</h2>
-            <div className="space-y-2 text-sm">
+            <address className="not-italic space-y-2 text-sm">
               <p>
-                <span className="font-semibold">Address:</span> Survey No : 275/
-                P-27, Plot No - 4, Hadamtala Industrial Area, Rajkot, Gujarat
-                360024, India
+                <span className="font-semibold">Address:</span> Survey No: 275/P-27, Plot No - 4, Hadamtala Industrial Area, Rajkot, Gujarat 360024, India
               </p>
               <p>
-                <span className="font-semibold">Phone:</span> +91 99248 70978
+                <span className="font-semibold">Phone:</span> 
+                <a href="tel:+919924870978" className="hover:text-red-400 hover:underline ml-1">
+                  +91 99248 70978
+                </a>
               </p>
               <p>
-                <span className="font-semibold">Email:</span>{" "}
-                squarefoundry@gmail.com
+                <span className="font-semibold">Email:</span> 
+                <a href="mailto:squarefoundry@gmail.com" className="hover:text-red-400 hover:underline ml-1">
+                  squarefoundry@gmail.com
+                </a>
               </p>
-            </div>
+            </address>
           </div>
         </div>
 
         {/* Social Links & Copyright */}
         <div className="mt-12 pt-8 border-t border-zinc-700">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+            {/* Social Links */}
             <div className="flex space-x-4">
-              <a
-                href="#"
-                className="bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-4 w-4 text-white" />
-              </a>
-              <a
-                href="#"
-                className="bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-4 w-4 text-white" />
-              </a>
-              <a
-                href="#"
-                className="bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4 text-white" />
-              </a>
-              <a
-                href="#"
-                className="bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-4 w-4 text-white" />
-              </a>
+              {[
+                { href: "mailto:squarefoundry@gmail.com", icon: Mail, label: "Email Us" },
+                { href: "tel:+919924870978", icon: PhoneCall, label: "Call Us" },
+                { href: "/Contact", icon: MessageCircleMore, label: "LinkedIn Profile" }
+              ].map(({ href, icon: Icon, label }, index) => (
+                <a 
+                  key={index} 
+                  href={href} 
+                  className="bg-red-500 p-2 rounded-full hover:bg-red-600 transition-colors"
+                  aria-label={label}
+                >
+                  <Icon className="h-5 w-5 text-white" />
+                </a>
+              ))}
             </div>
+
+            {/* Copyright Text */}
             <p className="text-sm text-gray-400">
               Square Foundry Pvt. Ltd. © {new Date().getFullYear()}
             </p>

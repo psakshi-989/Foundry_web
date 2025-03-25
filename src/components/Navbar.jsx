@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import symbol from "../assets/symbol.svg";
 import font from "../assets/font.svg";
+import { Mail, Phone, MapPin, Menu, X } from "lucide-react"; // Using Lucide icons for consistency
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,28 +27,31 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-md relative">
-      <div className="container mx-auto flex justify-between items-center px-4 md:px-5 lg:px-10 py-1">
+      <div className="container mx-auto flex justify-between items-center px-4 md:px-5 lg:px-10 py-2">
         {/* Logo */}
-        <div className="flex items-center space-x-3">  
-          <img src={symbol} alt="Company Logo" className="h-10 md:h-8" />  
-          <img src={font} alt="Company Name" className="h-10 md:h-8" />  
+        <div className="flex items-center space-x-3">
+          <img src={symbol} alt="Company Logo" className="h-10 md:h-8" />
+          <img src={font} alt="Company Name" className="h-10 md:h-8" />
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-3xl z-50"
+          className="md:hidden text-3xl z-50 text-gray-700"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          {isOpen ? "✖" : "☰"}
+          {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
 
         {/* Background overlay when menu is open */}
         {isOpen && (
-          <div className="fixed inset-0 bg-black/50 md:hidden" onClick={() => setIsOpen(false)}></div>
+          <div
+            className="fixed inset-0 bg-black/50 md:hidden"
+            onClick={() => setIsOpen(false)}
+          ></div>
         )}
 
         {/* Nav Links */}
-        
         <ul
           ref={menuRef}
           className={`menu fixed top-0 right-0 h-full bg-white shadow-lg w-64 
@@ -60,9 +64,10 @@ export default function Navbar() {
             { name: "Home", path: "/" },
             { name: "About Us", path: "/about" },
             { name: "Products", path: "/products" },
-            { name: "Quality and Certifications", path: "/quality" },
+            { name: "Quality & Certifications", path: "/quality" },
+            { name: "Contact Us", path: "/contact" }
           ].map((item, index) => (
-            <li key={index} className="w-full md:w-auto md:text-left text-center">
+            <li key={index} className="w-full md:w-auto text-center md:text-left">
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
@@ -72,7 +77,7 @@ export default function Navbar() {
                 }
                 onClick={() => setIsOpen(false)}
               >
-              {item.name}
+                {item.name}
                 <span className="absolute left-1/2 bottom-0 w-0 h-[2px] bg-red-600 transition-all duration-500 group-hover:w-full group-hover:left-0"></span>
               </NavLink>
             </li>
@@ -80,10 +85,28 @@ export default function Navbar() {
         </ul>
 
         {/* Contact Icons */}
-        <div className="hidden md:flex space-x-4 text-xl">
-          <a href="tel:+919924870978" className="hover:text-blue-600">📞</a>
-          <a href="mailto:squarefoundry@gmail.com" className="hover:text-blue-600">✉️</a>
-          <a href="https://maps.app.goo.gl/x5ibRxWKWvorYvQo9" className="hover:text-blue-600">📍</a>
+        <div className="hidden md:flex space-x-4 text-gray-700 text-xl">
+          <a
+            href="tel:+919924870978"
+            className="hover:text-red-500 transition-colors"
+            aria-label="Call Us"
+          >
+            <Phone className="w-5 h-5" />
+          </a>
+          <a
+            href="mailto:squarefoundry@gmail.com"
+            className="hover:text-red-500 transition-colors"
+            aria-label="Email Us"
+          >
+            <Mail className="w-5 h-5" />
+          </a>
+          <a
+            href="https://maps.app.goo.gl/x5ibRxWKWvorYvQo9"
+            className="hover:text-red-500 transition-colors"
+            aria-label="Find Us on Google Maps"
+          >
+            <MapPin className="w-5 h-5" />
+          </a>
         </div>
       </div>
     </nav>

@@ -62,14 +62,14 @@ export default function AboutUs() {
         className="w-screen h-screen bg-fixed bg-cover bg-center mt-10 flex flex-col items-center justify-center relative"
         style={{ backgroundImage: `url(${bg})` }}
       >
-      <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-6">Our Clients</h1>
+      <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-6">Our Clients</h2>
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 relative z-10">
           {[pgvcl, ugvcl, dgvcl, falcon, bhel, cg, algo].map((logo, index) => (
             <div
               key={index}
               className="bg-white p-3 sm:p-5 rounded-lg shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
             >
-              <img src={logo} alt={`Client logo ${index + 1}`} className="h-10 sm:h-12 md:h-16" />
+              <img src={logo} alt={`Client logo ${index + 1}`} loading="lazy" className="h-10 sm:h-12 md:h-16" />
             </div>
           ))}
         </div>
